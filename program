@@ -565,7 +565,7 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 
 # Load the iris dataset
 iris = datasets.load_iris() 
-X = iris.data zaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+X = iris.data
 y = iris.target 
 
 print("Features:\n", iris.feature_names) 
