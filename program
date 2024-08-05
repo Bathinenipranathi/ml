@@ -530,14 +530,13 @@ def locally_weighted_regression(X, y, x_query, tau):
     m = X.shape[0] 
     y_pred = np.zeros_like(x_query)
     for i, x_q in enumerate(x_query):
-        weights = np.exp(- (X - x_q) * 2 / (2 * tau * 2)) 
+        weights = np.exp(- (X - x_q) ** 2 / (2 * tau ** 2))  # Corrected weights calculation
         W = np.diag(weights) 
         X_ = np.vstack([np.ones(m), X]).T 
-        theta = np.linalg.inv(X_.T @ W @ X_) @ X_.T @ W @ y 
+        theta = np.linalg.inv(X_.T @ W @ X_) @ (X_.T @ W @ y)
 
         y_pred[i] = np.array([1, x_q]) @ theta 
     return y_pred 
-
 
 tau = 0.5  
 
@@ -551,6 +550,7 @@ plt.ylabel('y')
 plt.title('Locally Weighted Regression') 
 plt.legend() 
 plt.show()
+
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
